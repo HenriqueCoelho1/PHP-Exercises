@@ -21,9 +21,9 @@ Max: <?php echo max($Numbers)?><br />
 Min: <?php echo min($Numbers)?><br />
 Yes/No: <?php echo in_array(89, $Numbers)?><br />
 <?php echo sort($Numbers)?><br />
-<?php echo print_r($Numbers)?><br />
+Sort: <?php echo print_r($Numbers)?><br />
 <?php echo rsort($Numbers)?><br />
-<?php echo print_r($Numbers)?><br />
+Reversed sort: <?php echo print_r($Numbers)?><br />
 implode: <?php
 $Quote = array("Never", "Give", "Up");
 ?><br />
