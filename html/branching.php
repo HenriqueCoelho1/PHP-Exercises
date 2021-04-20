@@ -10,10 +10,11 @@
 <?php
 $Names = array("Pedro", "Enzo", "Rafael", "Thiago", "Joao", "Claypson", "Rodrigo", "Cesar");
 // $namesLength = count($Names);
-$namesLength = sizeof($Names);
-for($i = 0; $i <= 7; $i++){
-    if($Names[$i] == "Pedro"){
-        continue;
+// $namesLength = sizeof($Names);
+for($i = 0; $i <= count($Names); $i++){
+    if($Names[$i] == "Rafael"){
+        break;
+        //continue;
     }
     echo $Names[$i]. "<br />";
 
