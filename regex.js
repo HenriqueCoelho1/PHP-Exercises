@@ -1,0 +1,5 @@
+const name = '^[a-zA-Z. ]$'
+const email = '[a-zA-Z0-9._-]{3,}@[a-zA-Z0-9._-]{3,}[.]{1}[a-zA-Z0.9._-]{2,}'
+const other_email_regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)_@[a-z0-9-]+(\.[a-z0-9-]+)_(\.[a-z]{2,3})$/'
+const url = '(https:|ftp:)\/\/+[a-zA-Z0-9.\-_\/?\$=&\#\~`!]+\.[a-zA-Z0-9.\-_\/?\$=&\#\~`!]\*'
+const other_url = '((https?|ftp)://(\S_?\.\S\*?))([\s)\[\]{},;"\':<]|\.\s|$)'
