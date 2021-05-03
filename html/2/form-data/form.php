@@ -2,9 +2,20 @@
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $name = array('Claypson', 'Joao', 'Marcelo', 'Maria', 'Geromel');
 
-    echo $username;
-    echo $password;
+    $min = 4;
+    if(strlen($username) < $min){
+        echo "A min characters is required";
+    }
+
+    if(strlen($password) < $min){
+        echo "A min characters is required";
+    }
+
+    if(in_array($username, $name)){
+        echo "Its equal to {$username}";
+    }
 
 }
 ?>
