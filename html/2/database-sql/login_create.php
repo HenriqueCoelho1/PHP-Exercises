@@ -65,33 +65,6 @@ if(isset($_POST['submit'])){
 
     </section>
 
-    <!-- <div class="container">
-        <div class="columns is-centered">
-            <form action="login2.php" method="post"> 
-                    
-                    <div class="field">    
-                        <label class="label">Name: </label>
-                        
-                        <div class="control">
-                            <input class='input is-primary' type='text' placeholder='Your Name' name='username' value='' />
-                        </div>
-                    </div>
-                    
-                    <div class="field">
-                        <label class="label"> Email: </label>
-                        <div class="control">
-                            <input class='input is-primary' type='password' placeholder='Your Password' name='password' value='' />
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <button class="button is-primary" name="submit" value="">Submit</button>
-                        </div>
-                    </div>
-            </form>
-        </div>
-    </div> -->
     
 </body>
 </html>

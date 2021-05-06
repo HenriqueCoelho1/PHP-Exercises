@@ -1,5 +1,24 @@
 <?php include "db.php"; ?>
 <?php include "functions.php"; ?>
+<?php
+if(isset($_POST['submit'])){
+    $id = $_POST['id'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "UPDATE user SET ";
+    $query .= "username = '$username', ";
+    $query .= "password = '$password' ";
+    $query .= "WHERE id = $id ";
+
+    $result = mysqli_query($connection, $query);
+
+    if(!$result){
+        die("Query failed" . mysqli_error($connection));
+    }
+
+}
+?>
 
 
 <!DOCTYPE html>
