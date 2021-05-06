@@ -42,7 +42,7 @@
 
                             <div class="field p-1">
                                 <div class="control">
-                                    <button class="button is-primary" name="update" value="">Update</button>
+                                    <button class="button is-primary" name="submit" value="">Update</button>
                                 </div>
                             </div>
                         </form>
