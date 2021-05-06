@@ -1,22 +1,6 @@
-<?php
-if(isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+<?php include "db.php"; ?>
+<?php include "functions.php"; ?>
 
-    include "db.php";
-
-    $query = "INSERT INTO user(username, password) ";
-    $query .= "VALUES ('$username', '$password')";
-
-    $result = mysqli_query($connection, $query);
-
-    if(!$result){
-        die('Query Failed' . mysqli_error());
-    }
-
-
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,8 +17,8 @@ if(isset($_POST['submit'])){
             <div class="container">
                 <div class="columns is-centered">
                     <div class="is-5-tablet is-4-desktop is-3-widescreen">
-                        <form action="login_create.php" method="post"> 
-                        <h3 class="title is-3">Login</h3>
+                    <form action="login_update.php" method="post"> 
+                        <h3 class="title is-3">Update Your Account</h3>
                             <div class="field p-1">    
                                 <label class="label" for="username">Name: </label>
                                 
@@ -50,9 +34,15 @@ if(isset($_POST['submit'])){
                                 </div>
                             </div>
 
+                            <div class="select is-primary">
+                                <select name="id" id="">
+                                    <?php showAllData(); ?>
+                                </select>
+                            </div>
+
                             <div class="field p-1">
                                 <div class="control">
-                                    <button class="button is-primary" name="submit" value="">Submit</button>
+                                    <button class="button is-primary" name="update" value="">Update</button>
                                 </div>
                             </div>
                         </form>
@@ -65,33 +55,6 @@ if(isset($_POST['submit'])){
 
     </section>
 
-    <!-- <div class="container">
-        <div class="columns is-centered">
-            <form action="login2.php" method="post"> 
-                    
-                    <div class="field">    
-                        <label class="label">Name: </label>
-                        
-                        <div class="control">
-                            <input class='input is-primary' type='text' placeholder='Your Name' name='username' value='' />
-                        </div>
-                    </div>
-                    
-                    <div class="field">
-                        <label class="label"> Email: </label>
-                        <div class="control">
-                            <input class='input is-primary' type='password' placeholder='Your Password' name='password' value='' />
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <div class="control">
-                            <button class="button is-primary" name="submit" value="">Submit</button>
-                        </div>
-                    </div>
-            </form>
-        </div>
-    </div> -->
     
 </body>
 </html>

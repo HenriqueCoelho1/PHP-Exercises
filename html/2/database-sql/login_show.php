@@ -1,25 +1,8 @@
-<?php
-
-
-$connection = mysqli_connect('db_php_exercises', 'user', '123456', 'db');
-
-if($connection){
-    echo "DB connected";
-}else{
-    die("Database failed");
-}
-
-$query = "SELECT * FROM user";
-
-$result = mysqli_query($connection, $query);
-
-if(!$result){
-    die('Query Failed' . mysqli_error());
-}
+<?php  include "db.php"; ?>
+<?php include "functions.php";?>
 
 
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,17 +19,9 @@ if(!$result){
             <div class="container">
                 <div class="columns is-centered">
                     <div class="is-5-tablet is-4-desktop is-3-widescreen">
-                        <?php
-                            while($row = mysqli_fetch_assoc($result)){
-                        ?>
-                            <pre>
-                            <?php
-                                print_r($row);
-                            }
-                            ?>
-                            </pre>
-                            
-                    
+                        <pre>
+                            <?php showAllInformation(); ?>
+                        </pre>
                     </div>
                 </div>
             </div>
