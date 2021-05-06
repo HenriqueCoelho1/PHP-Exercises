@@ -3,6 +3,18 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    echo $username;
+    echo $password;
+
+    // $connection = mysqli_connect('localhost', 'user', '123456', 'db');
+
+    // if($connection){
+    //     echo "<div><strong>We are connected</strong></div>";
+    // }else{
+    //     die("Database failed");
+    // }
+
+
 }
 ?>
 <!DOCTYPE html>
@@ -28,8 +40,9 @@ if(isset($_POST['submit'])){
                                 <input class='input primary' 
                                 type='text' 
                                 placeholder='Put Your Name Here'
-                                name='name'
-                                value='name'/>
+                                name='username'
+                                value=''
+                                />
                             </div>
                         </div>
                         <div class='field p-1'>
@@ -39,12 +52,13 @@ if(isset($_POST['submit'])){
                                 type='password' 
                                 placeholder='Put Your Password Here' 
                                 name='password'
-                                value='password'/>
+                                value=''
+                                />
                             </div>
                         </div>
                         <div class="field">
                             <div class="control">
-                                <div class="button is-primary" name="submit" value="submit">Submit</div>
+                                <div class="button is-primary" name="submit" value=''>Submit</div>
                             </div>
                         </div>
                     </form>
