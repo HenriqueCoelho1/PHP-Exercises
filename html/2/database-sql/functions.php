@@ -47,7 +47,7 @@ function updateTable(){
 
 function createTable(){
     global $connection;
-    
+
     $username = $_POST['username'];
     $password = $_POST['password'];
 
@@ -58,6 +58,22 @@ function createTable(){
 
     if(!$result){
         die('Query Failed' . mysqli_error());
+    }
+}
+
+function deleteRows(){
+    global $connection;
+    $id = $_POST['id'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "DELETE FROM user ";
+    $query .= "WHERE id = $id ";
+
+    $result = mysqli_query($connection, $query);
+
+    if(!$result){
+        die("Query failed" . mysqli_error($connection));
     }
 }
 ?>
