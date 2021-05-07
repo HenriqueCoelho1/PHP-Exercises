@@ -26,4 +26,38 @@ function showAllInformation(){
         print_r($row);
     }
 }
+
+function updateTable(){
+    global $connection;
+    $id = $_POST['id'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "UPDATE user SET ";
+    $query .= "username = '$username', ";
+    $query .= "password = '$password' ";
+    $query .= "WHERE id = $id ";
+
+    $result = mysqli_query($connection, $query);
+
+    if(!$result){
+        die("Query failed" . mysqli_error($connection));
+    }
+}
+
+function createTable(){
+    global $connection;
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "INSERT INTO user(username, password) ";
+    $query .= "VALUES ('$username', '$password')";
+
+    $result = mysqli_query($connection, $query);
+
+    if(!$result){
+        die('Query Failed' . mysqli_error());
+    }
+}
 ?>

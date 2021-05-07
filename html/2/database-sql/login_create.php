@@ -1,20 +1,7 @@
+<?php include "functions.php";?>
 <?php
 if(isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    include "db.php";
-
-    $query = "INSERT INTO user(username, password) ";
-    $query .= "VALUES ('$username', '$password')";
-
-    $result = mysqli_query($connection, $query);
-
-    if(!$result){
-        die('Query Failed' . mysqli_error());
-    }
-
-
+    createTable();
 }
 ?>
 
