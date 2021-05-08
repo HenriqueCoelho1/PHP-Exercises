@@ -1,5 +1,5 @@
 <?php include "db.php"; ?>
-<?php
+<?php include "salt.php";
 function showAllData(){
     global $connection;
     $query = "SELECT * FROM user";
@@ -49,12 +49,17 @@ function updateTable(){
 
 function createTable(){
     global $connection;
+    global $salt;
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     $username = mysqli_real_escape_string($connection, $username); 
-    $password = mysqli_real_escape_string($connection, $password); 
+    $password = mysqli_real_escape_string($connection, $password);
+    
+    $hashFormat = "$2y$10$";
+    $hashF_and_salt = $hashFormat . $salt;
+    $password = crypt($password, $hashF_and_salt);
 
     $query = "INSERT INTO user(username, password) ";
     $query .= "VALUES ('$username', '$password')";
