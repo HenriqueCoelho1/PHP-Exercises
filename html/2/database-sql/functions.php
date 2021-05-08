@@ -5,6 +5,8 @@ function showAllData(){
     $query = "SELECT * FROM user";
     $result = mysqli_query($connection, $query);
 
+    
+
     if(!$result){
         die('Query Failed' . mysqli_error());
     }
@@ -50,6 +52,9 @@ function createTable(){
 
     $username = $_POST['username'];
     $password = $_POST['password'];
+
+    $username = mysqli_real_escape_string($connection, $username); 
+    $password = mysqli_real_escape_string($connection, $password); 
 
     $query = "INSERT INTO user(username, password) ";
     $query .= "VALUES ('$username', '$password')";
