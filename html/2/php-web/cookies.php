@@ -1,5 +1,5 @@
 <?php
-$name = "Some name";
+$name = "SomeName";
 $value = 100;
 $expiration = time() + (60 * 60 * 24 * 7); //the 60 is equal to seconds the seconds 60 is equal to minutes, 24 is for hours, and 7 is for days;
 setcookie($name, $value, $expiration);
@@ -14,6 +14,15 @@ setcookie($name, $value, $expiration);
     <title>Document</title>
 </head>
 <body>
+<?php
+if(isset($_COOKIE["SomeName"])){
+    $someOne = $_COOKIE["SomeName"];
+    echo $someOne;
+
+}else{
+    $someOne = "";
+}
+?>
     
 </body>
 </html>
