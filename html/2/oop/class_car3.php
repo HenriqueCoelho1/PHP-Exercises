@@ -1,22 +1,23 @@
 <?php
 class Car {
+    var $wheels = 4;
+    var $hood = 1;
+    var $engine = 1;
+    var $doors = 4;
     function MoveWheels(){
-        echo "Wheels Move";
+        $this -> wheels = 10;
 
+    }
+    function CreateDoors(){
+        $this -> doors = 6; 
     }
 
 }
 $bmw = new Car();
-$mercedes_benz = new Car();
+$truck = new Car();
+echo $bmw -> wheels . "<br />"; 
+echo $truck -> wheels = 8 . "<br />"; 
+$truck -> CreateDoors();
+echo $truck -> doors;
 
-$bmw -> MoveWheels();
-$mercedes_benz -> MoveWheels();
-
-// if(method_exists("Car", "MoveWheels")){
-//     echo "The Method exists!";
-
-// }else{
-//     echo "No!";
-
-// }
 ?>
